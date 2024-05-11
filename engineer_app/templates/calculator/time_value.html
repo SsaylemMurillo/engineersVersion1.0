@@ -1,0 +1,112 @@
+{% extends 'calculator.html' %}{% block contenido_adicional %} {{block.super}}
+<div class="flex flex-col items-center">
+  <form
+    method="post"
+    action="{% url 'time_value' %}"
+    class="w-full max-w-md items-center"
+    onsubmit=""
+  >
+    {% csrf_token %}
+    <h2 class="text-md text-center font-bold mb-5">Calculo de Tiempo (t)</h2>
+    <div class="ml-5 flex flex-row justify-around items-center">
+      <div class="mt-5 flex flex-col mb-5 space-y-2 items-center">
+        <label for="value1">Interes (I)</label>
+        <input
+          class="p-1 rounded"
+          type="text"
+          id="value1"
+          name="value1"
+          required
+          value="0"
+        />
+      </div>
+
+      <div class="mt-5 ml-5 flex flex-row">
+        <div class="flex flex-col mb-5 space-y-2">
+          <label for="value2">Capital Inicial (CI)</label>
+          <input
+            class="p-1 rounded"
+            type="text"
+            id="value2"
+            name="value2"
+            required
+            value="0"
+          />
+        </div>
+      </div>
+
+      <div class="mt-5 ml-5 flex flex-row">
+        <div class="flex flex-col mb-5 space-y-2">
+          <label for="value3">Capital Final (CF)</label>
+          <input
+            class="p-1 rounded"
+            type="text"
+            id="value3"
+            name="value3"
+            required
+            value="0"
+          />
+        </div>
+      </div>
+
+      <div class="mt-5 ml-5 flex flex-row">
+        <div class="flex flex-col mb-5 space-y-2">
+          <label for="value4">Tasa de interes (it)</label>
+          <input
+            class="p-1 rounded"
+            type="text"
+            id="value4"
+            name="value4"
+            required
+            value="0"
+          />
+        </div>
+      </div>
+
+      <div class="mt-5 ml-5 flex flex-row">
+        <div class="flex flex-col mb-5 space-y-2">
+          <label for="value5">Multiplicador (M)</label>
+          <input
+            class="p-1 rounded"
+            type="text"
+            id="value5"
+            name="value5"
+            required
+            value="0"
+          />
+        </div>
+      </div>
+
+      <div class="ml-5 flex flex-col w-30 items-center">
+        <label for="selectPage">Tipo:</label>
+        <select id="selectPage" class="border p-1 rounded">
+          <option value="" selected disabled>Elige</option>
+          <option value="">Anual</option>
+          <option value="">Semestral</option>
+          <option value="">Bimestral</option>
+          <option value="">Mensual</option>
+          <option value="">Quincenal</option>
+          <option value="">Semanal</option>
+        </select>
+      </div>
+    </div>
+    <div class="flex mt-5">
+      <button
+        type="submit"
+        name="calculate"
+        class="w-full bg-red-500 transition-colors duration-500 hover:bg-red-400 text-white mt-5 mb-5 mx-auto px-4 py-2 rounded"
+      >
+        Calcular
+      </button>
+      <button
+        type="reset"
+        name="calculate"
+        class="w-full bg-white text-black border border-gray-300 transition-colors duration-500 hover:text-white hover:bg-gray-400 ml-5 mt-5 mb-5 mx-auto px-4 py-2 rounded"
+      >
+        Limpiar
+      </button>
+    </div>
+  </form>
+</div>
+<script></script>
+{% endblock %}

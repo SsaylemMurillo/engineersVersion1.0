@@ -1,0 +1,46 @@
+{% extends "base.html" %} {% load static %} {% block content %}
+<div class="mt-5 flex-col flex items-center justify-center">
+  <h1 class="text-2xl font-bold">¿Qué es Engineer Solver?</h1>
+  <p class="mt-5 text-lg">
+    Engineer Solver es una herramienta diseñada para resolver una variedad de
+    problemas de ingeniería económica de manera eficiente y precisa. Con esta
+    aplicación, los ingenieros, estudiantes y profesionales del campo pueden
+    resolver rápidamente cálculos financieros complejos relacionados con
+    inversiones, evaluaciones de proyectos y análisis de costos.
+  </p>
+
+  <!-- Agregar el video -->
+  <div class="mt-5">
+    <video width="640" height="360" controls>
+      <source
+        src="{% static 'files/engineerSolver.mp4' %}"
+        type="video/mp4"
+      />
+      Tu navegador no soporta el elemento de video.
+    </video>
+  </div>
+  <!-- Iconos de FontAwesome con texto -->
+  <div class="flex items-center justify-center space-x-4 mt-8">
+    <div class="flex flex-col items-center m-5">
+      <span class="material-symbols-outlined">
+        payments
+        </span>
+      <p>Análisis Financiero</p>
+    </div>
+
+    <div class="flex flex-col items-center m-5">
+      <span class="material-symbols-outlined">
+        payments
+        </span>
+      <p>Cálculos Precisos</p>
+    </div>
+
+    <div class="flex flex-col items-center m-5">
+      <span class="material-symbols-outlined">
+        payments
+        </span>
+      <p>Finanzas Personales</p>
+    </div>
+  </div>
+</div>
+{% endblock %}

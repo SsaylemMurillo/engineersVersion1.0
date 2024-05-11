@@ -1,0 +1,24 @@
+{% extends 'base.html' %} {% block content %}{% load static %}
+<div class="flex items-center justify-center">
+  <div
+    class="flex flex-col items-center justify-stretch bg-white p-8 rounded shadow w-96 mt-5"
+  >
+    <p>El resultado de la operación es:</p>
+    <span id="resultValue" class="text-xl font-bold">
+      {% if result.mainresult %}
+      <p>Main Result: {{ result.mainresult }}</p>
+      {% if result.changedresult %}
+      <p>Changed Result: {{ result.changedresult }}</p>
+      {% endif %} {% else %}
+      <span id="resultValue" class="text-xl font-bold">{{ result }}</span>
+      {% endif %}
+    </span>
+    <button
+      onclick="closeTab()"
+      class="bg-red-500 transition-colors duration-500 hover:bg-red-400 text-white px-4 py-2 mt-4 rounded"
+    >
+      Cerrar
+    </button>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,113 @@
+{% extends 'calculator2.html' %}{% block contenido_adicional %} {{block.super}}
+<div class="flex flex-col items-center">
+  <form
+    method="post"
+    action="{% url 'compound_capital' %}"
+    class="w-full max-w-md items-center"
+  >
+    {% csrf_token %}
+    <h2 class="text-md text-center font-bold mb-5">
+      Calculo de Capital (C)
+    </h2>
+    <div class="flex flex-row justify-around items-center">
+      <div class="flex flex-col mb-5 space-y-2 items-center">
+        <label for="value1">Monto Compuesto (MC)</label>
+        <input
+          class="pl-2 rounded"
+          type="text"
+          id="value1"
+          name="value1"
+          required
+          value="0"
+        />
+      </div>
+      <div class="ml-4 flex flex-col mb-5 space-y-2">
+        <label for="value2">Tasa de interes (%)</label>
+        <input
+          class="pl-2 rounded"
+          type="text"
+          id="value2"
+          name="value2"
+          required
+          value="0"
+        />
+      </div>
+      <div class="ml-4 flex flex-col items-center space-x-3 mb-4">
+        <label for="selectTaxRate">Tipo de tasa de interes</label>
+        <select name="selectTaxRate" id="selectTaxRate" class="border p-2 rounded">
+          <option value="" selected disabled>Elige una opción</option>
+          <option value="ti_anual">Anual</option>
+          <option value="ti_mensual">Mensual</option>
+      </select>
+      </div>
+      <div class="ml-4 flex flex-col items-center space-x-3 mb-4">
+        <label for="selectCapValue">Capitalizable</label>
+        <select name="selectCapValue" id="selectCapValue" class="border p-2 rounded">
+          <option value="" selected disabled>Elige una opción</option>
+          <option value="cap_anual">Anual</option>
+          <option value="cap_mensual">Mensual</option>
+      </select>
+      </div>
+    </div>
+    <h3 class="text-sm text-center font-bold mb-5">
+        Tiempo
+      </h2>
+    <div class="flex flex-row items-center justify-around space-x-4">
+      <div class="flex flex-col items-center space-y-2">
+        <label for="value3">Dias</label>
+        <input
+          class="w-10 pl-2 rounded"
+          type="text"
+          id="value3"
+          name="value3"
+          required
+          onkeypress="return esNumero(event)"
+          value="0"
+        />
+      </div>
+      <div class="flex flex-col items-center space-y-2">
+        <label for="value4">Meses</label>
+        <input
+          class="w-10 pl-2 rounded"
+          type="text"
+          id="value4"
+          name="value4"
+          required
+          onkeypress="return esNumero(event)"
+          value="0"
+        />
+      </div>
+      <div class="flex flex-col items-center space-y-2">
+        <label for="value5">Años</label>
+        <input
+          class="w-14 pl-2 rounded"
+          type="text"
+          id="value5"
+          name="value5"
+          required
+          onkeypress="return esNumero(event)"
+          value="0"
+        />
+      </div>
+    </div>
+    <div class="flex mt-5">
+      <button
+        type="submit"
+        name="calculate"
+        class="w-full bg-red-500 transition-colors duration-500 hover:bg-red-400 text-white mt-5 mb-5 mx-auto px-4 py-2 rounded"
+      >
+        Calcular
+      </button>
+      <button
+        type="reset"
+        name="calculate"
+        class="w-full bg-white text-black border border-gray-300 transition-colors duration-500 hover:text-white hover:bg-gray-400 ml-5 mt-5 mb-5 mx-auto px-4 py-2 rounded"
+      >
+        Limpiar
+      </button>
+    </div>
+  </form>
+</div>
+<script>
+</script>
+{% endblock %}

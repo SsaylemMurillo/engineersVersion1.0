@@ -1,0 +1,54 @@
+{% extends 'base.html' %} {% load static %} {% block content %}
+<h1 class="text-2xl text-center font-bold">Interes Simple</h1>
+<p class="mt-5 text-lg mb-10">
+  El interés simple representa los intereses que genera un capital inicial
+  dentro de un período de tiempo, los cuales no se acumulan o reinvierten en el
+  siguiente período, por lo que el interés producido por el capital invertido o
+  prestado es igual en cada lapso de tiempo.
+</p>
+<div class="m-5 flex items-center justify-center">
+  <img src="{% static 'files/image.png' %}" alt="Descripción de la imagen">
+</div>
+<div class="flex flex-row justify-center items-center mb-10">
+  <a href="{% url 'calculate_future_value' %}">
+    <button
+      class="m-5 bg-white transition-colors duration-500 hover:bg-red-500 hover:text-white px-4 py-2 rounded"
+    >
+      Valor Futuro (VF)
+    </button>
+  </a>
+  
+  <a href="{% url 'e_tax_value' %}">
+    <button
+      class="m-5 bg-white transition-colors duration-500 hover:bg-red-500 hover:text-white px-4 py-2 rounded"
+    >
+      Interés (I)
+    </button>
+  </a>
+  
+  <a href="{% url 'calculate_capital_value' %}">
+    <button
+      class="m-5 bg-white transition-colors duration-500 hover:bg-red-500 hover:text-white px-4 py-2 rounded"
+    >
+      Capital (C)
+    </button>
+  </a>
+  
+  <a href="{% url 'calculate_tax_rate_value' %}">
+    <button
+      class="m-5 bg-white transition-colors duration-500 hover:bg-red-500 hover:text-white px-4 py-2 rounded"
+    >
+      Tasa de Interés (it)
+    </button>
+  </a>
+  
+  <a href="{% url 'calculate_time_value' %}">
+    <button
+      class="m-5 bg-white transition-colors duration-500 hover:bg-red-500 hover:text-white px-4 py-2 rounded"
+    >
+      Tiempo (t)
+    </button>
+  </a>
+</div>
+
+{% block contenido_adicional %}{% endblock %} {% endblock %}
